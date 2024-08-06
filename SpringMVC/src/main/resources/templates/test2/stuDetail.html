@@ -9,10 +9,10 @@
 	<h3>디테일</h3>
 	
 	<p th:text="${stu}"></p>
-	<div th:text="${stu.stu_name}"></div>
-	<div th:text="${stu.kor}"></div>
-	<div th:text="${stu.eng}"></div>
-	<div th:text="${stu.math}"></div>
+	<div th:text="'이름: ' + ${stu.stu_name}"></div>
+	<div th:text="'국어: ' + ${stu.kor}"></div>
+	<div th:text="'영어: ' + ${stu.eng}"></div>
+	<div th:text="'수학: ' + ${stu.math}"></div>
 	
 </body>
 </html>

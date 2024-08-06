@@ -1,6 +1,7 @@
 package com.ezen.springmvc.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -9,6 +10,7 @@ import com.ezen.springmvc.dto.Student;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+
 
 @Controller
 public class TestController2 {
@@ -47,5 +49,33 @@ public class TestController2 {
 		
 		return "/test2/stuDetail";
 	}
+	
+	@PostMapping("/test2/stu2")
+	public String stu2(
+			String stu_name, 
+			Integer kor, 
+			Integer eng, 
+			@ModelAttribute("math") Integer myMath,
+			Model model) {
+		
+		// 타입도 알아서 변경해준다
+		System.out.println("stu_name: " + stu_name);
+		System.out.println("kor: " + kor);
+		System.out.println("eng: " + eng);
+		System.out.println("math: " + myMath);
+		
+		Student stu = new Student();
+		
+		stu.setStu_name(stu_name);
+		stu.setKor(kor);
+		stu.setEng(eng);
+		stu.setMath(myMath);
+		
+		//model은 request setAttribute() 역할만 분리한 더 가벼운 객체
+		model.addAttribute("stu", stu);
+		
+		return "test2/stuForm";
+	}
+	
 	
 }
