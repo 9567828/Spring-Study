@@ -1,0 +1,44 @@
+@GetMapping(value={"",})
+	- @RequestMapping(value={"uri"}, method=RequestMethod.GET))을 생략한 어노테이션
+
+@GetMapping(value={"",})
+	- @RequestMapping(value={"uri"}, method=RequestMethod.POST))을 생략한 어노테이션
+	
+@GetMapping(value={"",})
+	- @RequestMapping(value={"uri"}, method=RequestMethod.GET))을 생략한 어노테이션
+	
+	@PutMapping, @DeleteMapping, @PatchMapping, ...
+	
+
+# 컨트롤러에서 매개변수 활용하기
+	- 컨트롤러의 매개변수에 원하는 변수를 설정해두면 스프링이 알아서 필요한 인스턴스를 전달한다
+	- 컨트롤러에서 활용할 수 있는 매개변수의 종류
+	
+	(1) HttpServletRequest
+	
+		- 컨트롤러의 매개변수 HttpServletRequest 변수를 선언해두면
+		  스프링이 알아서 해당 매개변수에 JSP 요청 객체를 전달해준다
+		- JSP에서 배운 모든 기능을 활용할 수 있다.
+	
+	(2) HttpServletResponse
+		
+		- 컨트롤러의 매개변수 HttpServletResponse 변수를 선언해두면
+		  스프링이 알아서 해당 매개변수에 JSP 응답 객체를 전달해준다
+		- JSP에서 배운 모든 기능을 활용할 수 있다.
+	
+	(3) 자바빈 형식의 모델 객체 (DTO)
+		- 자바빈 형식?
+		
+		+ 데이터 클래스를 만들 때 계속해서 사용하던 방식
+		+ 필드값의 접근 제어자는 private이어야 한다
+		+ 필드를 private으로 설정한 후 접근은 getter/setter를 사용한다
+		+ 기본 생성자가 반드시 존재해야 한다
+		+ 자바빈 스타일 객체는 다양한 프레임워크, API, 라이브러리들에서
+		  사용하는 표준이기 때문에 반드시 지키는 것이 좋다
+		  
+	    - 자바빈 객체들 매개 변수로 사용하면 파라미터를 편리하게 받을 수 있다
+	    - name 속성과 필드명이 동일 할 때 값을 자동으로 바인딩 하여 받게 된다
+		  
+		  
+		  
+		    
