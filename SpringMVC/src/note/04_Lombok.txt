@@ -24,3 +24,32 @@
 	
 	@ToString
 		- 클래스 위에 @ToString을 붙이면 클래스의 모든 필드에 대한 String을 자동으로 생성해준다
+	
+	@NoArgsConstructor
+	
+		- 아무 매개변수 없는 기본 생성자를 자동으로 생성해준다
+	
+	@RequiredArgsConstructor
+	
+		- 필수로 채워야 하는 필드가 포함된 생성자를 자동으로 생성
+		- lombok은 @NonNull이 위에 붙어있는 필드를 반드시 채워야 하는 필드로 생각한다
+		- final로 설정된 필드도 반드시 채워야 하는 필드로 생각하여 생성자에 추가된다
+		
+	@AllArgsConstructor
+	
+		- 모든 필드가 포함된 생성자를 자동으로 생성
+			
+	@EqualsAndHashCode
+		
+		- 해당 클래스의 equals()와 hashCode()를 생성
+		- equals()는 모든 필드의 값이 일치하면 같은 것으로 판정
+		- hashCode()는 모든 필드의 값이 같다면 항상 같은 값을얻어낼 수 있음
+	
+	@Data
+	
+		@Getter
+		@Setter
+		@ToString
+		@
+		
+		

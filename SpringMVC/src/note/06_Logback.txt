@@ -1,0 +1,119 @@
+06_Logback.txt
+
+# Logback
+
+	- 스프링 부트에 기본적으로 내장되어 있는 로깅 라이브러리
+	- System.out.println()으로 로그를 남기는 것 보다 훨신 체계적인 방식으로 로그를 남길 수 있다
+	- 서버는 동시에 많은 사람들이 접속하는 멀티쓰레드 프로그램이기 때문에 System.out.println()를
+	  사용하면 많은 성능저하가 발생할 수 있다
+	- Logback은 각 로그마다 로그 등급을 설정하고 원하는 등급 이상의 로그만 보게끔 설정할 수 있다
+
+# Logger
+
+	- 클래스에 등록해 놓으면 해당 클래스에서 발생하는 로그를 수집하는 객체
+	- 수집한 로그(텍스트)들을 Appender로 보낸다
+
+# Appender
+
+	- 로거가 수집해 보내준 로그들을 출력하는 객체
+	- 받은 로그들을 파일, 콘솔, 웹, DB등에 추가하는 역할을 수행한다
+
+# Encoder
+	
+	- Appender가 원하는 곳에 로그를 추가할 때 어떤 모양으로 추가해야 하는 지 설정하는 객체
+
+# 스프링 부트의 Logback 기본 설정 파일들
+
+	- spring-boot-3.3.2.jar > org.springframework.boot.logging.logback
+		+ base.xml : 다른 3개의 설정 파일을 모두 include하는 내용이 들어있다.
+		+ defaults.xml : 여러 설정값들을 선언 및 초기화하는 내용이 들어있다
+		+ console-appender.xml : 콘솔에 발생한 로그를 추가하는 콘솔 어펜더에 대한 설정 
+		+ file-appender.xml : 발생한 로그를 파일에 추가하는 파일 어펜더에 대한 설정
+		
+# 로그 설정 커스텀 하기
+
+	- src/main/resources/logback-spring.xml 파일을 생성하면 스프링 부트의 기본 로그설정 파일인
+	  base.xml을 덮어쓸 수 있다
+	- 내가 원하는 설정을 프로젝트에 직접 적용할 수 있다
+
+# ConsoleAppender
+	- 발생한 로그를 콘솔에 추가해주는 어펜더
+	
+	<included>
+		<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+			<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+				<level>${CONSOLE_LOG_THRESHOLD}</level>
+			</filter>
+			<encoder>
+				<pattern>${CONSOLE_LOG_PATTERN}</pattern>
+				<charset>${CONSOLE_LOG_CHARSET}</charset>
+			</encoder>
+		</appender>
+	</included>
+	
+	<appender> : 어펜더를 등록할 때 사용하는 태그
+	name: 아래에서 이 어펜더를 부를 때 사용할 이름
+	class : 실제 불러서 사용할 클래스의 위치
+	<filter> : 발생한 로그들을 걸러낼 수 있는 필터정책을 설정
+			   (ThresholdFilter는 로그의 등급으로 로그를 걸러내는 필터 정책)
+	<encoder> : 발생한 로그들을 콘솔에 추가할 때 사용할 패턴을 정의한다
+				(${CONSOLE_LOG_PATTERN}과 ${CONSOLE_LOG_CHARSET}은 defaults.xml에 정의되어 있다.)
+
+# RollingFileAppender
+
+	- 일정 시간 또는 로그 파일의 크기가 넘어가면 다음 파일에 로그를 기록해주는 방식의 어펜더
+	- 정책에 따라 다음 파일로 넘어가는 방식이 결정된다
+	  (e.g. TimeBasedRollingPolicy, SizeAndTimeBasedRollingPolicy...)
+	  
+	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>${FILE_LOG_THRESHOLD}</level>
+		</filter>
+		<encoder>
+			<pattern>${FILE_LOG_PATTERN}</pattern>
+			<charset>${FILE_LOG_CHARSET}</charset>
+		</encoder>
+		<file>${LOG_FILE}</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<fileNamePattern>${LOGBACK_ROLLINGPOLICY_FILE_NAME_PATTERN:-${LOG_FILE}.%d{yyyy-MM-dd}.%i.gz}</fileNamePattern>
+			<cleanHistoryOnStart>${LOGBACK_ROLLINGPOLICY_CLEAN_HISTORY_ON_START:-false}</cleanHistoryOnStart>
+			<maxFileSize>${LOGBACK_ROLLINGPOLICY_MAX_FILE_SIZE:-10MB}</maxFileSize>
+			<totalSizeCap>${LOGBACK_ROLLINGPOLICY_TOTAL_SIZE_CAP:-0}</totalSizeCap>
+			<maxHistory>${LOGBACK_ROLLINGPOLICY_MAX_HISTORY:-7}</maxHistory>
+		</rollingPolicy>
+	</appender>
+	
+	<filter> : 콘솔과 같은 역할
+	<encoder> : 콘솔과 같은 역할
+	<file>${LOG_FILE}</file> : 파일이 저장될 위치를 설정
+	<rollingPolicy> : 언제 다음 파일로 넘어가야 할지에 대한 정책을 설정하는 객체
+	<fileNamePattern> : 패턴을 사용하여 파일 이름을 결정하는 곳
+						(파일 이름이 달라져야 다음 파일로 넘어감)
+	<cleanHistoryOnStart> : 서버를 새로 시작 할 때 로그를 모두 초기화 할 것인가?
+	<maxFileSize> : 로그 파일 하나의 크기 제한 (설정한 크기를 넘어가면 다음 파일로 넘어감)
+	<totalSizeCap> : 전체 모든 로그 파일에 대한 크기 제한
+	<maxHistory> : 로그 파일의 개수 제한
+	
+# Log4j (Logback) 로깅 레벨
+
+	- OFF : 모든 등급의 로그를 끔
+	- FATAL : 아주 심각한 등급의 로그 (시스템 적으로 아주 심각)를 작성할 때 사용
+	- ERROR : 에러 등급의 로그를 작성할 때 사용 (에러보다 더 심각한 로그들만 출력됨)
+	- WARN : 경고 등급의 로그를 작성할 때 사용 (경고보다 더 심각한 로그들만 출력 됨)
+	- INFO : 정보 등급의 로그를 작성할 때 사용 (정보 등급보다 더 심각한 로그들만 출력 됨)
+	- DEBUG : 버그를 찾을 때 사용하는 자잘한 개발자용 로그를 작성할 때 사용 (디버그 등급보다 더 심각한 로그만 출력)
+	- TRACE : 코드의 진행 흐름을 추적할 때 사용하는 아주 정밀한 로그를 작성할 때 사용 (모든 로그가 출력된다)
+	- ALL : 모든 단계의 로그를 출력한다
+	
+# application.properties에서 로그 옵션 설정하기
+
+	- ${LOG_FILE} : logging.file.name (로그 파일이 하나만 생김)
+	- ${LOG_PATH} : logging.file.path (롤링파일이 돌아갈 경로)
+	- ${CONSOLE_LOG_THRESHOLD} : logging.threshold.console (콘솔에 출력되는 로깅 등급을 설정)
+	- ${FILE_LOG_THRESHOLD} : logging.threshold.file (파일에 출력되는 로그의 등급을 설정)
+	...
+	이 외에도 많은 옵션들을 비슷한 방식으로 application.properties에서 설정할 수 있다
+	
+
+	
+	
