@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+// 리퀴스트매핑 -> 폴더 위치를 미리 지정해 놓는다
 @RequestMapping("/test1")
 @Controller
 public class TestController1 {
