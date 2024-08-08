@@ -1,7 +1,7 @@
 @GetMapping(value={"",})
 	- @RequestMapping(value={"uri"}, method=RequestMethod.GET))을 생략한 어노테이션
 
-@GetMapping(value={"",})
+@PostMapping(value={"",})
 	- @RequestMapping(value={"uri"}, method=RequestMethod.POST))을 생략한 어노테이션
 	
 @GetMapping(value={"",})
