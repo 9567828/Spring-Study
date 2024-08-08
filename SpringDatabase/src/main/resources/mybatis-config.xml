@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<!-- Window > Preferences > Maven > download artifact javadoc 체크 -->
+<configuration>
+	<!-- 이 안에 설정은 application.properties에서 설정해두었음 -->
+	<typeAliases>
+		<typeAlias type="com.ezen.springdata.dto.EmployeeDTO" alias="emp" />
+	</typeAliases>
+</configuration>

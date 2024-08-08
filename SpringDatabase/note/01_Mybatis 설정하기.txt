@@ -1,0 +1,70 @@
+01_Mybatis 설정하기.txt
+
+# Mybatis
+	- DB와 연결하는데 필요한 모든 jdbc 코드를 자동으로 생성해주는 프레임워크
+	- XML 파일만 작성해두면 필요한 코드는 모두 자동으로 생성한다
+	
+# My Batis 설정하기
+	
+	- application.properties
+	
+	+ datasource 설정 (기본적으로 hikariCP를 사용함)
+	
+		spring.datasource.driver-class-name=oracle.jdbc.driver.OracleDriver
+		spring.datasource.url=jdbc:oracle:thin:@127.0.0.1:1521:xe
+		spring.datasource.username=hr
+		spring.datasource.password=1234
+		
+	+ hikari에 관련된 설정
+	
+		spring.datasource.hikari.maximum-pool-size=20
+		spring.datasource.hikari.minimum-idle=5
+		spring.datasource.hikari.idle-timeout=90000
+		logging.level.com.zaxxer.hikari.pool.HikariPool=debug
+		... 등등
+	
+	+ mybatis 설정파일 위치 정의
+	
+		mybatis.config-location=classpath:mybatis-config.xml
+		mybatis.mapper-locations=classpath:mapper/*.xml
+		mapper가 여러개인 경우
+		mybatis.mapper-locations=classpath:mapper/**/*.xml
+		
+	- src/main/resources/mybatis-config.xml
+	
+		* 설정 예시
+		<!DOCTYPE configuration
+		  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+		  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+		<!-- Window > Preferences > Maven > download artifact javadoc 체크 -->
+		<configuration>
+			<!-- 이 안에 설정은 application.properties에서 설정해두었음 -->
+			<typeAliases>
+				<typeAlias type="com.ezen.springdata.dto.EmployeeDTO" alias="emp" />
+			</typeAliases>
+		</configuration>
+		
+		
+	- src/main/resources/mapper/*.xml
+	
+		* 설정 예시
+		<!DOCTYPE mapper
+		  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+		<mapper namespace="Employees">
+			<select id="getAll" resultType="emp" >
+				SELECT employee_id, first_name, last_name, email, phone_number,
+					   hire_date, job_id, salary, commission_pct, manager_id, department_id
+				FROM
+					employees2
+			</select>
+			
+			<select id="get" resultType="emp" parameterType="Integer">
+				SELECT employee_id, first_name, last_name, email, phone_number,
+					   hire_date, job_id, salary, commission_pct, manager_id, department_id
+				FROM
+					employees2
+				WHERE
+					employee_id = #{employee_id} <!-- 파라미터사용 -->
+			</select>
+		</mapper>

@@ -1,78 +1,76 @@
-2024-08-07T17:37:06.026+09:00  INFO 3080 --- [SpringMVC] [main] c.ezen.springmvc.SpringMvcApplication    : Starting SpringMvcApplication using Java 17.0.11 with PID 3080 (D:\repasitories\Spring-Study\SpringMVC\target\classes started by user in D:\repasitories\Spring-Study\SpringMVC)
-2024-08-07T17:37:06.028+09:00  INFO 3080 --- [SpringMVC] [main] c.ezen.springmvc.SpringMvcApplication    : No active profile set, falling back to 1 default profile: "default"
-2024-08-07T17:37:06.515+09:00  INFO 3080 --- [SpringMVC] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9090 (http)
-2024-08-07T17:37:06.523+09:00  INFO 3080 --- [SpringMVC] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-08-07T17:37:06.532+09:00  INFO 3080 --- [SpringMVC] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
-2024-08-07T17:37:06.566+09:00  INFO 3080 --- [SpringMVC] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-08-07T17:37:06.567+09:00  INFO 3080 --- [SpringMVC] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 508 ms
-2024-08-07T17:37:06.630+09:00  INFO 3080 --- [SpringMVC] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2024-08-07T17:37:06.806+09:00  INFO 3080 --- [SpringMVC] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9090 (http) with context path '/'
-2024-08-07T17:37:06.812+09:00  INFO 3080 --- [SpringMVC] [main] c.ezen.springmvc.SpringMvcApplication    : Started SpringMvcApplication in 1.023 seconds (process running for 1.344)
-2024-08-07T17:37:30.503+09:00  INFO 3080 --- [SpringMVC] [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-08-07T17:37:30.503+09:00  INFO 3080 --- [SpringMVC] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-08-07T17:37:30.503+09:00  INFO 3080 --- [SpringMVC] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2024-08-07T17:37:30.537+09:00  INFO 3080 --- [SpringMVC] [http-nio-9090-exec-1] c.e.springmvc.controller.HomeController  : coffee1의 모든 값을 통해 도출해낸 해쉬코드값: 1712589923
-2024-08-07T17:37:30.537+09:00  INFO 3080 --- [SpringMVC] [http-nio-9090-exec-1] c.e.springmvc.controller.HomeController  : coffee2 해쉬코드값: -330981935
-2024-08-07T17:37:30.537+09:00  INFO 3080 --- [SpringMVC] [http-nio-9090-exec-1] c.e.springmvc.controller.HomeController  : coffee3 해쉬코드값: -330981935
-2024-08-07T17:37:30.537+09:00 ERROR 3080 --- [SpringMVC] [http-nio-9090-exec-1] c.e.springmvc.controller.HomeController  : coffee1, coffee2의 해쉬코드가 다르므로 다른 객체: false
-2024-08-07T17:37:30.537+09:00 ERROR 3080 --- [SpringMVC] [http-nio-9090-exec-1] c.e.springmvc.controller.HomeController  : coffee2, coffee3의 해쉬코드가 같다: true
-2024-08-07T17:40:08.332+09:00  INFO 3080 --- [SpringMVC] [RMI TCP Connection(12)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2024-08-07T17:43:20.970+09:00  INFO 13896 --- [SpringMVC] [main] c.ezen.springmvc.SpringMvcApplication    : Starting SpringMvcApplication using Java 17.0.11 with PID 13896 (D:\repasitories\Spring-Study\SpringMVC\target\classes started by user in D:\repasitories\Spring-Study\SpringMVC)
-2024-08-07T17:43:20.972+09:00  INFO 13896 --- [SpringMVC] [main] c.ezen.springmvc.SpringMvcApplication    : No active profile set, falling back to 1 default profile: "default"
-2024-08-07T17:43:21.432+09:00  INFO 13896 --- [SpringMVC] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9090 (http)
-2024-08-07T17:43:21.439+09:00  INFO 13896 --- [SpringMVC] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-08-07T17:43:21.439+09:00  INFO 13896 --- [SpringMVC] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
-2024-08-07T17:43:21.466+09:00  INFO 13896 --- [SpringMVC] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-08-07T17:43:21.466+09:00  INFO 13896 --- [SpringMVC] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 465 ms
-2024-08-07T17:43:21.536+09:00  INFO 13896 --- [SpringMVC] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2024-08-07T17:43:21.683+09:00  INFO 13896 --- [SpringMVC] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9090 (http) with context path '/'
-2024-08-07T17:43:21.688+09:00  INFO 13896 --- [SpringMVC] [main] c.ezen.springmvc.SpringMvcApplication    : Started SpringMvcApplication in 0.935 seconds (process running for 1.229)
-2024-08-07T17:43:30.886+09:00  INFO 13896 --- [SpringMVC] [http-nio-9090-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-08-07T17:43:30.886+09:00  INFO 13896 --- [SpringMVC] [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-08-07T17:43:30.887+09:00  INFO 13896 --- [SpringMVC] [http-nio-9090-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2024-08-07T17:43:30.903+09:00  INFO 13896 --- [SpringMVC] [http-nio-9090-exec-2] c.e.springmvc.controller.HomeController  : coffee1의 모든 값을 통해 도출해낸 해쉬코드값: 1712589923
-2024-08-07T17:43:30.903+09:00  INFO 13896 --- [SpringMVC] [http-nio-9090-exec-2] c.e.springmvc.controller.HomeController  : coffee2 해쉬코드값: -330981935
-2024-08-07T17:43:30.903+09:00  INFO 13896 --- [SpringMVC] [http-nio-9090-exec-2] c.e.springmvc.controller.HomeController  : coffee3 해쉬코드값: -330981935
-2024-08-07T17:43:30.903+09:00 ERROR 13896 --- [SpringMVC] [http-nio-9090-exec-2] c.e.springmvc.controller.HomeController  : coffee1, coffee2의 해쉬코드가 다르므로 다른 객체: false
-2024-08-07T17:43:30.904+09:00 ERROR 13896 --- [SpringMVC] [http-nio-9090-exec-2] c.e.springmvc.controller.HomeController  : coffee2, coffee3의 해쉬코드가 같다: true
-2024-08-07T17:45:17.412+09:00  INFO 13896 --- [SpringMVC] [RMI TCP Connection(11)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2024-08-07T17:45:20.815+09:00  INFO 26676 --- [SpringMVC] [main] c.ezen.springmvc.SpringMvcApplication    : Starting SpringMvcApplication using Java 17.0.11 with PID 26676 (D:\repasitories\Spring-Study\SpringMVC\target\classes started by user in D:\repasitories\Spring-Study\SpringMVC)
-2024-08-07T17:45:20.818+09:00  INFO 26676 --- [SpringMVC] [main] c.ezen.springmvc.SpringMvcApplication    : No active profile set, falling back to 1 default profile: "default"
-2024-08-07T17:45:21.274+09:00  INFO 26676 --- [SpringMVC] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9090 (http)
-2024-08-07T17:45:21.281+09:00  INFO 26676 --- [SpringMVC] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-08-07T17:45:21.281+09:00  INFO 26676 --- [SpringMVC] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
-2024-08-07T17:45:21.308+09:00  INFO 26676 --- [SpringMVC] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-08-07T17:45:21.309+09:00  INFO 26676 --- [SpringMVC] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 468 ms
-2024-08-07T17:45:21.379+09:00  INFO 26676 --- [SpringMVC] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2024-08-07T17:45:21.516+09:00  INFO 26676 --- [SpringMVC] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9090 (http) with context path '/'
-2024-08-07T17:45:21.522+09:00  INFO 26676 --- [SpringMVC] [main] c.ezen.springmvc.SpringMvcApplication    : Started SpringMvcApplication in 0.939 seconds (process running for 1.253)
-2024-08-07T17:45:46.519+09:00  INFO 26676 --- [SpringMVC] [RMI TCP Connection(8)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2024-08-07T17:45:53.220+09:00  INFO 18540 --- [SpringMVC] [main] c.ezen.springmvc.SpringMvcApplication    : Starting SpringMvcApplication using Java 17.0.11 with PID 18540 (D:\repasitories\Spring-Study\SpringMVC\target\classes started by user in D:\repasitories\Spring-Study\SpringMVC)
-2024-08-07T17:45:53.221+09:00  INFO 18540 --- [SpringMVC] [main] c.ezen.springmvc.SpringMvcApplication    : No active profile set, falling back to 1 default profile: "default"
-2024-08-07T17:45:53.673+09:00  INFO 18540 --- [SpringMVC] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9090 (http)
-2024-08-07T17:45:53.679+09:00  INFO 18540 --- [SpringMVC] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-08-07T17:45:53.680+09:00  INFO 18540 --- [SpringMVC] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
-2024-08-07T17:45:53.707+09:00  INFO 18540 --- [SpringMVC] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-08-07T17:45:53.707+09:00  INFO 18540 --- [SpringMVC] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 456 ms
-2024-08-07T17:45:53.773+09:00  INFO 18540 --- [SpringMVC] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2024-08-07T17:45:53.911+09:00  INFO 18540 --- [SpringMVC] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9090 (http) with context path '/'
-2024-08-07T17:45:53.917+09:00  INFO 18540 --- [SpringMVC] [main] c.ezen.springmvc.SpringMvcApplication    : Started SpringMvcApplication in 0.908 seconds (process running for 1.211)
-2024-08-07T17:48:09.729+09:00  INFO 18540 --- [SpringMVC] [RMI TCP Connection(12)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2024-08-07T17:48:39.275+09:00  INFO 17812 --- [SpringMVC] [main] c.ezen.springmvc.SpringMvcApplication    : Starting SpringMvcApplication using Java 17.0.11 with PID 17812 (D:\repasitories\Spring-Study\SpringMVC\target\classes started by user in D:\repasitories\Spring-Study\SpringMVC)
-2024-08-07T17:48:39.284+09:00  INFO 17812 --- [SpringMVC] [main] c.ezen.springmvc.SpringMvcApplication    : No active profile set, falling back to 1 default profile: "default"
-2024-08-07T17:48:39.738+09:00  INFO 17812 --- [SpringMVC] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9090 (http)
-2024-08-07T17:48:39.744+09:00  INFO 17812 --- [SpringMVC] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-08-07T17:48:39.744+09:00  INFO 17812 --- [SpringMVC] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
-2024-08-07T17:48:39.770+09:00  INFO 17812 --- [SpringMVC] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-08-07T17:48:39.770+09:00  INFO 17812 --- [SpringMVC] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 459 ms
-2024-08-07T17:48:39.838+09:00  INFO 17812 --- [SpringMVC] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2024-08-07T17:48:39.975+09:00  INFO 17812 --- [SpringMVC] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9090 (http) with context path '/'
-2024-08-07T17:48:39.981+09:00  INFO 17812 --- [SpringMVC] [main] c.ezen.springmvc.SpringMvcApplication    : Started SpringMvcApplication in 0.952 seconds (process running for 1.271)
-2024-08-07T17:48:46.126+09:00  INFO 17812 --- [SpringMVC] [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-08-07T17:48:46.126+09:00  INFO 17812 --- [SpringMVC] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-08-07T17:48:46.127+09:00  INFO 17812 --- [SpringMVC] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2024-08-07T17:48:46.145+09:00  INFO 17812 --- [SpringMVC] [http-nio-9090-exec-1] c.e.springmvc.controller.HomeController  : coffee1의 모든 값을 통해 도출해낸 해쉬코드값: 1712589923
-2024-08-07T17:48:46.146+09:00  INFO 17812 --- [SpringMVC] [http-nio-9090-exec-1] c.e.springmvc.controller.HomeController  : coffee2 해쉬코드값: -330981935
-2024-08-07T17:48:46.146+09:00  INFO 17812 --- [SpringMVC] [http-nio-9090-exec-1] c.e.springmvc.controller.HomeController  : coffee3 해쉬코드값: -330981935
-2024-08-07T17:48:46.146+09:00 ERROR 17812 --- [SpringMVC] [http-nio-9090-exec-1] c.e.springmvc.controller.HomeController  : coffee1, coffee2의 해쉬코드가 다르므로 다른 객체: false
-2024-08-07T17:48:46.146+09:00 ERROR 17812 --- [SpringMVC] [http-nio-9090-exec-1] c.e.springmvc.controller.HomeController  : coffee2, coffee3의 해쉬코드가 같다: true
+2024-08-08T09:56:43.279+09:00  INFO 27912 --- [SpringMVC] [main] c.ezen.springmvc.SpringMvcApplication    : Starting SpringMvcApplication using Java 17.0.11 with PID 27912 (D:\repasitories\Spring-Study\SpringMVC\target\classes started by user in D:\repasitories\Spring-Study\SpringMVC)
+2024-08-08T09:56:43.295+09:00  INFO 27912 --- [SpringMVC] [main] c.ezen.springmvc.SpringMvcApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-08-08T09:56:44.006+09:00  INFO 27912 --- [SpringMVC] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9090 (http)
+2024-08-08T09:56:44.015+09:00  INFO 27912 --- [SpringMVC] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-08T09:56:44.025+09:00  INFO 27912 --- [SpringMVC] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-08T09:56:44.065+09:00  INFO 27912 --- [SpringMVC] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-08T09:56:44.065+09:00  INFO 27912 --- [SpringMVC] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 729 ms
+2024-08-08T09:56:44.166+09:00  INFO 27912 --- [SpringMVC] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-08-08T09:56:44.323+09:00  INFO 27912 --- [SpringMVC] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9090 (http) with context path '/'
+2024-08-08T09:56:44.330+09:00  INFO 27912 --- [SpringMVC] [main] c.ezen.springmvc.SpringMvcApplication    : Started SpringMvcApplication in 1.269 seconds (process running for 1.556)
+2024-08-08T13:27:09.505+09:00  INFO 27912 --- [SpringMVC] [RMI TCP Connection(218)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-08-08T22:59:22.400+09:00  INFO 18968 --- [SpringMVC] [main] c.ezen.springmvc.SpringMvcApplication    : Starting SpringMvcApplication using Java 17.0.11 with PID 18968 (D:\repasitories\Spring-Study\SpringMVC\target\classes started by user in D:\repasitories\Spring-Study\SpringMVC)
+2024-08-08T22:59:22.401+09:00  INFO 18968 --- [SpringMVC] [main] c.ezen.springmvc.SpringMvcApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-08-08T22:59:22.893+09:00  INFO 18968 --- [SpringMVC] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9090 (http)
+2024-08-08T22:59:22.900+09:00  INFO 18968 --- [SpringMVC] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-08T22:59:22.900+09:00  INFO 18968 --- [SpringMVC] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-08T22:59:22.928+09:00  INFO 18968 --- [SpringMVC] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-08T22:59:22.928+09:00  INFO 18968 --- [SpringMVC] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 499 ms
+2024-08-08T22:59:22.997+09:00  INFO 18968 --- [SpringMVC] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-08-08T22:59:23.138+09:00  INFO 18968 --- [SpringMVC] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9090 (http) with context path '/'
+2024-08-08T22:59:23.143+09:00  INFO 18968 --- [SpringMVC] [main] c.ezen.springmvc.SpringMvcApplication    : Started SpringMvcApplication in 0.993 seconds (process running for 1.318)
+2024-08-08T22:59:42.190+09:00  INFO 21308 --- [SpringMVC] [main] c.ezen.springmvc.SpringMvcApplication    : Starting SpringMvcApplication using Java 17.0.11 with PID 21308 (D:\repasitories\Spring-Study\SpringMVC\target\classes started by user in D:\repasitories\Spring-Study\SpringMVC)
+2024-08-08T22:59:42.191+09:00  INFO 21308 --- [SpringMVC] [main] c.ezen.springmvc.SpringMvcApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-08-08T22:59:42.681+09:00  INFO 21308 --- [SpringMVC] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9090 (http)
+2024-08-08T22:59:42.690+09:00  INFO 21308 --- [SpringMVC] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-08T22:59:42.690+09:00  INFO 21308 --- [SpringMVC] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-08T22:59:42.720+09:00  INFO 21308 --- [SpringMVC] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-08T22:59:42.721+09:00  INFO 21308 --- [SpringMVC] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 499 ms
+2024-08-08T22:59:42.796+09:00  INFO 21308 --- [SpringMVC] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-08-08T22:59:42.931+09:00  WARN 21308 --- [SpringMVC] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2024-08-08T22:59:42.941+09:00  INFO 21308 --- [SpringMVC] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-08-08T22:59:42.950+09:00 ERROR 21308 --- [SpringMVC] [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 9090 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 9090 or configure this application to listen on another port.
+
+2024-08-08T22:59:43.292+09:00  INFO 18968 --- [SpringMVC] [http-nio-9090-exec-4] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-08-08T22:59:43.293+09:00  INFO 18968 --- [SpringMVC] [http-nio-9090-exec-4] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-08-08T22:59:43.293+09:00  INFO 18968 --- [SpringMVC] [http-nio-9090-exec-4] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2024-08-08T23:00:00.641+09:00  INFO 19136 --- [SpringMVC] [main] c.ezen.springmvc.SpringMvcApplication    : Starting SpringMvcApplication using Java 17.0.11 with PID 19136 (D:\repasitories\Spring-Study\SpringMVC\target\classes started by user in D:\repasitories\Spring-Study\SpringMVC)
+2024-08-08T23:00:00.643+09:00  INFO 19136 --- [SpringMVC] [main] c.ezen.springmvc.SpringMvcApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-08-08T23:00:01.086+09:00  INFO 19136 --- [SpringMVC] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9090 (http)
+2024-08-08T23:00:01.093+09:00  INFO 19136 --- [SpringMVC] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-08T23:00:01.093+09:00  INFO 19136 --- [SpringMVC] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-08T23:00:01.120+09:00  INFO 19136 --- [SpringMVC] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-08T23:00:01.120+09:00  INFO 19136 --- [SpringMVC] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 454 ms
+2024-08-08T23:00:01.192+09:00  INFO 19136 --- [SpringMVC] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-08-08T23:00:01.326+09:00  WARN 19136 --- [SpringMVC] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2024-08-08T23:00:01.335+09:00  INFO 19136 --- [SpringMVC] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-08-08T23:00:01.343+09:00 ERROR 19136 --- [SpringMVC] [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 9090 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 9090 or configure this application to listen on another port.
+

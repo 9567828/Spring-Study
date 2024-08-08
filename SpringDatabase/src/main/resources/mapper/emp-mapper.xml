@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <!-- mapper의 namespace는 이 mapper를 가져다 쓸 때의 이름이다 -->
+<mapper namespace="Employees">
+	<!-- 
+		id: 이 쿼리문을 실행하고 싶을 때 사용할 이름
+		resultType: 이 selet 쿼리문의 실행 결과가 어떤 타입으로 나오게 될지 설정
+		쿼리문에 *를 사용하는것은 지양한다.
+	 -->
+	<select id="getAll" resultType="emp" >
+		SELECT employee_id, first_name, last_name, email, phone_number,
+			   hire_date, job_id, salary, commission_pct, manager_id, department_id
+		FROM
+			employees2
+	</select>
+	
+	<!-- parameterType: 이 쿼리문을 실행하기 위해 전달 받을 파라미터의 타입을 정의 -->
+	<select id="get" resultType="emp" parameterType="Integer">
+		SELECT employee_id, first_name, last_name, email, phone_number,
+			   hire_date, job_id, salary, commission_pct, manager_id, department_id
+		FROM
+			employees2
+		WHERE
+			employee_id = #{employee_id} <!-- 파라미터사용 -->
+	</select>
+
+	<select id="getAllDeptById" resultType="emp" parameterType="Integer">
+		SELECT employee_id, first_name, last_name, email, phone_number,
+			   hire_date, job_id, salary, commission_pct, manager_id, department_id
+		FROM
+			employees2
+		WHERE
+			department_id = #{dept_id} <!-- 파라미터사용 -->
+	</select>
+</mapper>

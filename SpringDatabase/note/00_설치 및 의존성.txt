@@ -1,0 +1,20 @@
+00_설치 및 의존성.txt
+
+# 필요한 의존성
+
+	- spring web
+	- spring devtools (수정사항 바로반영 - 서버재시작 안해도 됨)
+	- spring mybatis
+	- oracle driver
+	- lombok
+	- tymeleaf
+	
+# 서버를 실행하기 위해 데이터 소스 설정
+
+	- DB관련 의존성을 추가하고 나서는 데이터베이스 연결에 실패하면 서버가 실행되지 않는다
+	- application.properties에 다음 내용을 추가하여 DB에 연결한다
+	
+	spring.datasource.driver-class-name=oracle.jdbc.driver.OracleDriver
+	spring.datasource.url=jdbc:oracle:thin:@127.0.0.1:1521:xe
+	spring.datasource.username=hr
+	spring.datasource.password=1234
