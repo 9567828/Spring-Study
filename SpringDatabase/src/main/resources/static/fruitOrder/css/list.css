@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+h3 {
+	color: salmon;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr) 2fr repeat(2, 1fr);
+	font-weight: bold;
+}
+
+#fruit-order-list {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr) 2fr repeat(2, 1fr);
+}
+
+#fruit-order-list > div {
+	margin-bottom: 10px;
+}

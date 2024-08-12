@@ -26,23 +26,23 @@
 			fruits (fid, fname, price, qty, exp_date)
 		VALUES
 	<if test="exp_date != null">
-			(fruit_seq.nextval, #{fname}, #{price}, #{qty}, #{exp_date})
+			(#{fid}, #{fname}, #{price}, #{qty}, #{exp_date})
 	</if>
 	<if test="exp_date == null">
-			(fruit_seq.nextval, #{fname}, #{price}, #{qty}, sysdate + 7)
+			(#{fid}, #{fname}, #{price}, #{qty}, sysdate + 7)
 	</if>
 	</insert>
 	
 	<select id="getAll" resultType="fruit" >
 		SELECT 
-			fid, fname, price, qty, exp_date
+			fid, fname, price, qty, exp_date, location_id
 		FROM
-			fruits
+			fruits ORDER BY fid DESC
 	</select>
 
 	<select id="get" resultType="fruit" parameterType="Integer" >
 		SELECT 
-			fid, fname, price, qty, exp_date
+			fid, fname, price, qty, exp_date, location_id
 		FROM
 			fruits
 		WHERE
@@ -58,5 +58,40 @@
 	<delete id="deleteFruit" parameterType="Integer">
 		DELETE fruits WHERE fid = #{fid}
 	</delete>
+	
+	<!-- 파라미터 여러개 받기 위해서 hashmap을 했기 때문에 import를 불러오는 것 -->
+	<update id="reduceFruit" parameterType="java.util.HashMap">
+		UPDATE fruits SET qty = qty - #{qty} 
+		WHERE fid = #{fid}
+	</update>
+	
+	<insert id="addHistory" parameterType="java.util.HashMap">
+		INSERT INTO FruitSalesHistory(fhid, fid, qty)
+		VALUES (fhistory_fhid_seq.nextval, #{fid}, #{qty})
+	</insert>
+	
+	<resultMap id="FruitSalesHistoryMap" type="fruitHistory">
+		<result column="fhid" property="fhid" />	
+		<result column="fid" property="fid" />	
+		<result column="qty" property="qty" />
+		<result column="purchase_time" property="purchase_time" />
+		<association property="fruit" javaType="fruit"> <!-- property는 히스토리dto에 들어간 변수명대로 -->
+			<result column="fname" property="fname"/>
+			<result column="exp_date" property="exp_date"/>
+			<result column="location_id" property="location_id"/>
+		</association>
+	</resultMap>
+	
+	<select id="getSalesList" resultMap="FruitSalesHistoryMap">
+		SELECT
+		    fs.fhid,
+		    fs.fid,
+		    fs.qty,
+		    fs.purchase_time,
+		    f.fname
+		FROM
+		     FruitSalesHistory fs
+		INNER JOIN fruits f ON fs.fid = f.fid    
+	</select>
 	
 </mapper>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8" xmlns="http://www.thymeleaf.org" />
+	<title>과일 발주 목록</title>
+	<link rel="stylesheet" th:href="@{/fruitOrder/css/list.css}" />
+</head>
+<body>
+	<h3>과일 발주목록</h3>
+	
+	<ul>
+		<li>No.</li>
+		<li>과일이름</li>
+		<li>가격</li>
+		<li>수량</li>
+		<li>유통기한</li>
+		<li>지역번호</li>
+	</ul>
+	<div id="fruit-order-list" th:each="fruitOrder: ${fruitOrders}">
+		<div>[[${fruitOrder.fid}]]</div>
+		<div>[[${fruitOrder.fname}]]</div>
+		<div>[[${fruitOrder.price}]]</div>
+		<div>[[${fruitOrder.qty}]]</div>
+		<div>[[${fruitOrder.exp_date}]]</div>
+		<div>[[${fruitOrder.location_id}]]</div>
+		<div>
+			<button 
+				class="sale-btn" 
+				th:data-fid="${fruitOrder.fid}"
+				th:data-fruit-price="${fruitOrder.price}"
+				th:data-remain-qty="${fruitOrder.qty}">	
+				판매
+			</button>
+		</div>
+	</div>
+	
+	<!-- post를 받기 위해서 form을 넣어준다 -->
+	<!-- Postmapping에서 sale로 정해놨다 -->
+	<form id="sale-form" action="sale" method="POST">
+		<input type="hidden" name="fid" />
+		<input type="hidden" name="qty" />
+	</form>
+	
+	<h3>과일 판매 내역</h3>
+		<div th:each="fruitSaleList: ${fruitSalesList}">
+			<div>[[${fruitSaleList.fhid}]]</div>
+			<div>[[${fruitSaleList.fid}]]</div>
+			<div>[[${fruitSaleList.qty}]]</div>
+			<div>[[${fruitSaleList.purchase_time}]]</div>
+			<div>[[${fruitSaleList.fruit.fname}]]</div>
+		</div>
+	
+	<script th:src="@{/fruitOrder/js/list.js}"></script>
+</body>
+</html>
