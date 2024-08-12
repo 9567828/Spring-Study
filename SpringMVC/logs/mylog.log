@@ -74,3 +74,4 @@ Action:
 
 Identify and stop the process that's listening on port 9090 or configure this application to listen on another port.
 
+2024-08-08T23:28:40.203+09:00  INFO 18968 --- [SpringMVC] [RMI TCP Connection(40)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <!-- mapper의 namespace는 이 mapper를 가져다 쓸 때의 이름이다 -->
+<mapper namespace="Fruits">
+	<insert id="add" parameterType="fruit">
+		INSERT INTO
+			fruits (fid, fname, price, qty, exp_date)
+		VALUES
+	<if test="exp_date != null">
+			(fruit_seq.nextval, #{fname}, #{price}, #{qty}, #{exp_date})
+	</if>
+	<if test="exp_date == null">
+			(fruit_seq.nextval, #{fname}, #{price}, #{qty}, sysdate + 7)
+	</if>
+	</insert>
+	
+	<insert id="add2" parameterType="fruit">
+	<!-- order는 insert쿼리문 실행 전에 실행하겠다는 의미다 -->
+	<!-- selectKey를 사용하면 insert 성공 여부 대신 키값이 추가된 dto를 반환한다 -->
+		<selectKey keyProperty="fid" resultType="Integer" order="BEFORE">
+			SELECT fruit_seq.nextval FROM dual
+		</selectKey>
+		INSERT INTO
+			fruits (fid, fname, price, qty, exp_date)
+		VALUES
+	<if test="exp_date != null">
+			(fruit_seq.nextval, #{fname}, #{price}, #{qty}, #{exp_date})
+	</if>
+	<if test="exp_date == null">
+			(fruit_seq.nextval, #{fname}, #{price}, #{qty}, sysdate + 7)
+	</if>
+	</insert>
+	
+	<select id="getAll" resultType="fruit" >
+		SELECT 
+			fid, fname, price, qty, exp_date
+		FROM
+			fruits
+	</select>
+
+	<select id="get" resultType="fruit" parameterType="Integer" >
+		SELECT 
+			fid, fname, price, qty, exp_date
+		FROM
+			fruits
+		WHERE
+			fid = #{fid}
+	</select>
+	
+	<update id="editFruit" parameterType="fruit">
+		UPDATE fruits 
+	    SET fname = #{fname}, price = #{price}, qty = #{qty}, exp_date = #{exp_date}
+		WHERE fid = #{fid}
+	</update>
+	
+	<delete id="deleteFruit" parameterType="Integer">
+		DELETE fruits WHERE fid = #{fid}
+	</delete>
+	
+</mapper>

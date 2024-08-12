@@ -7,5 +7,6 @@
 	<!-- 이 안에 설정은 application.properties에서 설정해두었음 -->
 	<typeAliases>
 		<typeAlias type="com.ezen.springdata.dto.EmployeeDTO" alias="emp" />
+		<typeAlias type="com.ezen.springdata.dto.FruitDTO" alias="fruit" />
 	</typeAliases>
 </configuration>

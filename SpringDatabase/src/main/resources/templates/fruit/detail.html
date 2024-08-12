@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" xmlns="http://www.thymeleaf.org"/>
+	<title th:text="${fruitDetail.fname} + '정보'"></title>
+</head>
+<body>
+	
+	<div id="detail-wrap">
+		<h3 th:text="${fruitDetail.fname} + '상세정보'"></h3>
+		<div th:text="'이름: ' + ${fruitDetail.fname}"></div>
+		<div th:text="'가격: ' + ${fruitDetail.price}"></div>
+		<div th:text="'수량: ' + ${fruitDetail.qty}"></div>
+		<div th:text="'유통기한: ' + ${fruitDetail.exp_date}"></div>
+		<button id="editBtn">수정하기</button>
+		<button id="delete-btn">삭제하기</button>
+	</div>
+	
+	<div id="form-wrap" style="display: none;">
+		<form action="./detail" method="POST">
+			번호: <input type="text" name="fid" th:value=${fruitDetail.fid} readonly /> <br />
+			과일이름: <input type="text" name="fname" th:value="${fruitDetail.fname}" /> <br />
+			가격: <input type="number" name="price" th:value="${fruitDetail.price}" /> <br />
+			수량: <input type="number" name="qty" th:value="${fruitDetail.qty}" /> <br />
+			유통기한: <input type="datetime-local" name="exp_date" th:value="${fruitDetail.exp_date}"/> <br />
+			<input type="submit" value="확인" />
+		</form>
+		<button id="cancle-btn">취소</button>
+	</div>
+	
+	<script>
+		const editBtn = document.getElementById("editBtn")
+		const formWrap = document.getElementById("form-wrap")
+		const detailWrap = document.getElementById("detail-wrap");
+		const cancleBtn = document.getElementById("cancle-btn");
+		
+		
+		editBtn.addEventListener("click", (e) => {
+			detailWrap.style.display = "none";
+			formWrap.style.display = "block";
+		})
+		
+		cancleBtn.addEventListener("click", (e) => {
+			detailWrap.style.display = "block";
+			formWrap.style.display = "none";
+		})
+		
+		const deleteBtn = document.getElementById("delete-btn")
+		deleteBtn.addEventListener("click", (e) => {
+			const fid = '[[${fruitDetail.fid}]]';
+			
+		    if (confirm("삭제하시겠습니까?")) {
+		        location.href = "./delete?fid=" + fid;
+		    } else {
+		        location.href = "./detail?fid=" + fid;
+		    }
+		})
+		
+	</script>
+	
+</body>
+</html>
