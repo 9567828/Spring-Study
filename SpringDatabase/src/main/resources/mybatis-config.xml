@@ -9,5 +9,6 @@
 		<typeAlias type="com.ezen.springdata.dto.EmployeeDTO" alias="emp" />
 		<typeAlias type="com.ezen.springdata.dto.FruitDTO" alias="fruit" />
 		<typeAlias type="com.ezen.springdata.dto.FruitSalesHistoryDTO" alias="fruitHistory" />
+		<typeAlias type="com.ezen.springdata.profile.dto.ProfileImgDTO" alias="profileImage" />
 	</typeAliases>
 </configuration>
