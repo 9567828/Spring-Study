@@ -4,6 +4,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -55,5 +56,21 @@ public class ResponseEntityTestController {
 	public ResponseEntity<String> test3(FruitDTO fruitDTO) {
 		log.info("fruitDTO: {}", fruitDTO);
 		return ResponseEntity.ok().contentType(MediaType.TEXT_PLAIN).body("오키!");
+	}
+	
+	// jackson-databind로 JSON데이터 DTO에 바인딩 되기 위해서는 @RequestBody가 필요하다
+	@PutMapping("/test4")
+	public ResponseEntity<String> test4 (@RequestBody FruitDTO fruitDTO) {
+		log.info("fruitDTO: {}", fruitDTO);
+		
+		// 받은 정보를 통해 DB에 업데이트를 진행한 후 결과를 받아왔다고 가정
+		boolean updateResult = true;
+		
+		if (updateResult) {
+			return ResponseEntity.ok().contentType(MediaType.TEXT_PLAIN).body("테스트4통과");	
+		} else {
+			return ResponseEntity.status(502).contentType(MediaType.TEXT_PLAIN).body("테스트4 실패");				
+		}
+		
 	}
 }

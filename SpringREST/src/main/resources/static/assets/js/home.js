@@ -4,6 +4,7 @@ const btn = document.getElementById("btn")
 const out = document.getElementById("out")
 
 const btn2 = document.getElementById("btn2")
+const btn3 = document.getElementById("btn3")
 
 btn.addEventListener("click", (e) => {
 	// 서버로 요청 보내기 원래는 location.href로 경로를 보냈음
@@ -47,3 +48,38 @@ btn2.addEventListener("click", (e) => {
 	xhttp.setRequestHeader("content-type", "application/x-www-form-urlencoded")
 	xhttp.send("fid=3&fname=포도&price=3300");
 })
+
+btn3.addEventListener("click", (e) => {
+	const xhttp = new XMLHttpRequest();
+	
+	xhttp.addEventListener("load", (e) => {
+		if (xhttp.status == 200) {
+			console.log("성공했다: " + xhttp.responseText)
+		} else if (xhttp.status == 502) {
+			console.log("실패!: " + xhttp.responseText)
+		}
+	})
+	
+	xhttp.open("PUT", "/entity/test4");
+	xhttp.setRequestHeader("content-type", "application/json");
+	// JSON 형식 문자열을 실어보내면
+	// 서버측의 jackson-databind가 받은 JSON을 데이터를 DTO로 바인딩 해준다.
+	// xhttp.send("{\"fid\":3,\"fname\":\"감귤\"}"); 수동은 힘들지
+	
+	// javascript에서는 Javascript object를 쉽게 JSON 문자열로 변환할 수 있다
+	const newFruit = {
+		fid: 3,
+		fme: "딸기",
+		price: 3500,
+		qty: 30
+	}
+	
+	const jsonFruit = JSON.stringify(newFruit);
+	
+	// 오브젝트를 JSON형으로 변환시킨거
+	console.log("json으로 변환된 newfruit: ", jsonFruit);
+	xhttp.send(jsonFruit)
+})
+
+
+
