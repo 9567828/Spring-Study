@@ -41,4 +41,20 @@ public class ProfileController {
 		return "redirect:/profile/image/upload";
 	}
 	
+	@PostMapping("/profile/image/multisave")
+	public String multiProfileImgSave(ProfileImgDTO profileImgDTO) {
+		
+		log.info("files: {}", profileImgDTO.getProfileImageFiles());
+		
+		try {
+			profileService.multisave(profileImgDTO);
+		} catch (IllegalStateException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		return "redirect:/profile/image/upload";
+	}
+	
 }
