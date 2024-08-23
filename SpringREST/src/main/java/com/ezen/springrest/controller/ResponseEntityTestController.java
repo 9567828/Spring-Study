@@ -73,4 +73,18 @@ public class ResponseEntityTestController {
 		}
 		
 	}
+	
+	@GetMapping("/test5")
+	public FruitDTO test5(Integer id) {
+		log.info("받은 id: {}", id);
+		
+		FruitDTO fruit = new FruitDTO();
+		
+		fruit.setFid(110);
+		fruit.setFname("메론");
+		fruit.setPrice(18000);
+		fruit.setLocation_id(3000);
+		
+		return fruit;
+	}
 }

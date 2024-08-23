@@ -3,6 +3,28 @@
 <head>
 	<meta charset="UTF-8">
 	<title>HoMe PaGe</title>
+	
+	<style>
+		#out2 {
+			display: grid;
+			grid-template-columns: repeat(6, 1fr);
+		}
+		.fid {
+			background-color: red;
+		}
+		
+		.fname {
+			background-color: orange;
+		}
+		
+		.price {
+			background-color: gold;
+		}
+		
+		.location_id {
+			background-color: green;
+		}
+	</style>
 </head>
 <body>
 
@@ -13,7 +35,10 @@
 	<div id="out"></div>
 	
 	<button id="btn2">xhttp요청에 파라미터 함께 보내기</button> <br />
-	<button id="btn3">xhttp요청에 JSON형식 파라미터 실어보내기</button>
+	<button id="btn3">xhttp요청에 JSON형식 파라미터 실어보내기</button> <br />
+	<button id="btn4">xhttp요청으로 데이터 가져와 반영해보기</button>
+	
+	<div id="out2"></div>
 	
 	<script th:src="@{/assets/js/home.js}"></script>
 </body>
